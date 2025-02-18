@@ -1,5 +1,5 @@
 export const createSoybean = () => ({
-    type: "soybean",
+    type: "Soybean",
     height: 20,
     output: 4
 })
