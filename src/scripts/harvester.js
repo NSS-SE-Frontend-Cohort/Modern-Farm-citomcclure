@@ -6,44 +6,17 @@ import { createSunflower } from "./seeds/sunflower.js";
 import { createWheat } from "./seeds/wheat.js";
 
 export const harvestPlants = (plants) => {
-    let newSeeds = [];
+    // Optional Challenge: Display Once With Quantity
+    let newSeedsMap = new Map();
 
     plants.forEach(plant => {
-        switch (plant.type) {
-            case "Asparagus":
-                for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createAsparagus());
-                };
-                break;
-            case "Corn":
-                for (let i = 0; i < plant.output / 2; i++) {
-                    newSeeds.push(createCorn()[0]);
-                };
-                break;
-            case "Potato":
-                for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createPotato());
-                };
-                break;
-            case "Soybean":
-                for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createSoybean());
-                };
-                break;
-            case "Sunflower":
-                for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createSunflower());
-                };
-                break;
-            case "Wheat":
-                for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createWheat());
-                };
-                break;
-            default:
-                console.log("Unable to handle this type of crop.")
+        if (!newSeedsMap.has(plant.type)) {
+            newSeedsMap.set(plant.type, 0);
         }
+
+        let numToAdd = plant.type == "corn" ? plant.output / 2 : plant.output;
+        newSeedsMap.set(plant.type, newSeedsMap.get(plant.type) + numToAdd);
     })
 
-    return newSeeds;
+    return newSeedsMap;
 }

@@ -1,9 +1,18 @@
 export const Catalog = (harvested) => {
-    const harvestedPlantsElement = document.getElementById("harvestedPlants");
+    const forSaleTableElement = document.getElementById("forSaleTable");
 
-    if (harvestedPlantsElement) {
-        harvested.forEach(plant => {
-            harvestedPlantsElement.innerHTML += `<section class="plant">${plant.type}</section>`
-        });
+    if (forSaleTableElement) {
+        // Optional Challenge: Display Once With Quantity
+        harvested.forEach((value, key) => {
+            let newRow = forSaleTableElement.insertRow();
+
+            let newCellFood = newRow.insertCell(0);
+            let newTextFood = document.createTextNode(key);
+            newCellFood.appendChild(newTextFood);
+
+            let newCellQuantity = newRow.insertCell(1);
+            let newTextQuantity = document.createTextNode(value);
+            newCellQuantity.appendChild(newTextQuantity);
+        })
     }
 }
