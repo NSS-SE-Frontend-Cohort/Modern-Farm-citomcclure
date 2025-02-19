@@ -4,40 +4,41 @@ import { createPotato } from "./seeds/potato.js";
 import { createSoybean } from "./seeds/soybean.js";
 import { createSunflower } from "./seeds/sunflower.js";
 import { createWheat } from "./seeds/wheat.js";
+import { barn } from "./storageBarn.js"
 
-export const harvestPlants = (plants) => {
-    let newSeeds = [];
+export const harvestPlantsAndStore = (plants) => {
+    let storageBarn = barn();
 
     plants.forEach(plant => {
         switch (plant.type) {
             case "Asparagus":
                 for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createAsparagus());
+                    storageBarn.push(createAsparagus());
                 };
                 break;
             case "Corn":
                 for (let i = 0; i < plant.output / 2; i++) {
-                    newSeeds.push(createCorn()[0]);
+                    storageBarn.push(createCorn()[0]);
                 };
                 break;
             case "Potato":
                 for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createPotato());
+                    storageBarn.push(createPotato());
                 };
                 break;
             case "Soybean":
                 for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createSoybean());
+                    storageBarn.push(createSoybean());
                 };
                 break;
             case "Sunflower":
                 for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createSunflower());
+                    storageBarn.push(createSunflower());
                 };
                 break;
             case "Wheat":
                 for (let i = 0; i < plant.output; i++) {
-                    newSeeds.push(createWheat());
+                    storageBarn.push(createWheat());
                 };
                 break;
             default:
@@ -45,5 +46,5 @@ export const harvestPlants = (plants) => {
         }
     })
 
-    return newSeeds;
+    return storageBarn;
 }
