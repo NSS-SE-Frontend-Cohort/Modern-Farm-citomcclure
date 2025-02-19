@@ -7,6 +7,8 @@ import { createWheat } from "./seeds/wheat.js";
 import { addPlant } from "./field.js";
 
 export const plantSeeds = (plan) => {
+    let uniqueId = 1;
+
     plan.forEach(row => row.forEach(plot => {
         let seed;
 
@@ -33,6 +35,8 @@ export const plantSeeds = (plan) => {
                 console.log("Unable to handle this type of crop.")
         }
 
+        // Optional Challenge 3: Unique Identifiers
+        Array.isArray(seed) ? seed.forEach(s => s.id = uniqueId++) : seed.id = uniqueId++;
         addPlant(seed);
     }));
 }

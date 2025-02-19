@@ -6,7 +6,7 @@ import { createSunflower } from "./seeds/sunflower.js";
 import { createWheat } from "./seeds/wheat.js";
 
 export const harvestPlants = (plants) => {
-    // Optional Challenge: Display Once With Quantity
+    // Optional Challenge 2: Display Once With Quantity
     let newSeedsMap = new Map();
 
     plants.forEach(plant => {

@@ -5,5 +5,5 @@ export const createCorn = () => {
         output: 6
     }
 
-    return [corn, corn];
+    return [corn, structuredClone(corn)];
 }

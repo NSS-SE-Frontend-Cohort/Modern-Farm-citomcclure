@@ -9,7 +9,8 @@ plantSeeds(yearlyPlan);
 const usedPlants = usePlants();
 const harvestedPlants = harvestPlants(usedPlants);
 
-// Optional Challenge: Ordering the Harvest
+
+// Optional Challenge 1: Ordering the Harvest
 // harvestedPlants.sort(function(a,b) {
 //     return a.type < b.type ? -1 : 1;
 // });
