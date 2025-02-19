@@ -7,7 +7,7 @@ import { Catalog } from "./catalog.js";
 const yearlyPlan = createPlan();
 plantSeeds(yearlyPlan);
 let storageBarn = harvestPlantsAndStore(usePlants());
-console.log(storageBarn.storageBarn);
+console.log(storageBarn.stack);
 
 let i = 0;
 while (!storageBarn.isEmpty()) {

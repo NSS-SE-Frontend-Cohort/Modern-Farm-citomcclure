@@ -1,19 +1,19 @@
-let storageBarn = [];
+let stack = [];
 
-export const barn = (plants) => {
+export const barn = () => {
     return {
-        storageBarn: storageBarn,
+        stack: stack,
         push: (crop) => {
-            storageBarn.push(crop);
+            stack.push(crop);
         },
         pop: () => {
-            return storageBarn.pop();
+            return stack.pop();
         },
         peek: () => {
-            return storageBarn[storageBarn.length - 1].type;
+            return stack[stack.length - 1].type;
         },
         isEmpty: () => {
-            return storageBarn.length === 0;
+            return stack.length === 0;
         }
     }
 }
