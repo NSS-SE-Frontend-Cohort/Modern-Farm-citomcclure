@@ -3,7 +3,7 @@ export const Catalog = (harvested) => {
 
     if (harvestedPlantsElement) {
         harvested.forEach(plant => {
-            harvestedPlantsElement.innerHTML += `<section class="plant">${plant.type}</section>`
+            harvestedPlantsElement.innerHTML += `<section class="plant">${plant.icon}</section>`
         });
     }
 }
